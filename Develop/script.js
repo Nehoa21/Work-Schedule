@@ -9,12 +9,29 @@ $(function () {
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
   
+  // TODO: Add code to display the current date in the header of the page.
+  var currentDate = dayjs().format('dddd MMMM D, YYYY h:mm a');
+  $('#currentDay').text(currentDate);
+
   var textInfo = $('description');
+
+
+  function setHourColor(){
+    var currentHour = getHours();
+    if (currentHour < getHours()) {
+      $('.time-block')
+    }
+  }
+  
 
   var saveBtn = $('saveBtn');
   saveBtn.on('click', function() {
-
-  })
+    
+    // var formData = new FormData(textInfo);
+    // var data = Object.fromEntries(formData.entries());
+    // var dataString = JSON.stringify(data);
+    // localStorage.setItem('savedData', dataString);
+  });
 
 
   //
@@ -28,7 +45,12 @@ $(function () {
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
   //
-  // TODO: Add code to display the current date in the header of the page.
-  var currentDate = dayjs().format('dddd MMMM, D');
-  $('#currentDay').text(currentDate);
+
+
+
+
+
+
+
+  
 });

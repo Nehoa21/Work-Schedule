@@ -33,15 +33,16 @@ $(function () {
   function setHourColor(){
     var currentHour = dayjs().hour();
     console.log (currentHour);
-    timeBlock.each(function() {
+    $(timeBlock).each(function() {
       // timeBlock.addClass('time-block');
       var time = parseInt($(this).attr("id").split("hour-")[0]);
       
-      if (time < currentHour) {
-        $(this).addClass("past");
-      } else if (time === currentHour) {
+      if (time === currentHour) {
+        $(this).removeClass("past");
         $(this).addClass("present");
       } else if (time > currentHour) {
+        $(this).removeClass("past");
+        $(this).removeClass("present");
         $(this).addClass("future");
       }
     });

@@ -4,10 +4,10 @@ $(function () {
   var timeBlock = $('time-block');
   var saveBtn = $('saveBtn');
 
-  // TODO: Add code to display the current date in the header of the page.
   var currentDate = dayjs().format('dddd MMMM D, YYYY h:mm a');
   $('#currentDay').text(currentDate);
 
+  // changes time-block color according to current time of day
   function setHourColor(){
     var currentHour = dayjs().hour();
     console.log (currentHour);
@@ -26,6 +26,7 @@ $(function () {
     });
   }
 
+  // shows user input for tasks on each time-block
   function showTextInfo() {
     var userIn = localStorage.getItem('description');
 
@@ -34,6 +35,7 @@ $(function () {
     }
   }
 
+  // saves user input for time-blocks when save button clicked
   saveBtn.on('click', function(event) {
     event.preventDefault();
     // textInfo = $(this).siblings(textInfo).val();
@@ -45,6 +47,7 @@ $(function () {
     console.log(textInfo);
   });
 
+  // on refresh of page, gets user input from local storage and displays again
   function init() {
     // var storedText = JSON.parse(localStorage.getItem('textInfo'));
 
